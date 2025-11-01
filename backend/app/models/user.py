@@ -1,12 +1,13 @@
-from sqlalchemy import Column, String, Boolean
+from sqlalchemy import String, Boolean
+from sqlalchemy.orm import Mapped, mapped_column
 from app.database.base import BaseModel
 
 
 class User(BaseModel):
     __tablename__ = "users"
 
-    email = Column(String, unique=True, index=True, nullable=False)
-    username = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=False)
-    is_active = Column(Boolean, default=True)
-    is_superuser = Column(Boolean, default=False)
+    email: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
+    username: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
+    hashed_password: Mapped[str] = mapped_column(String, nullable=False)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_superuser: Mapped[bool] = mapped_column(Boolean, default=False)
