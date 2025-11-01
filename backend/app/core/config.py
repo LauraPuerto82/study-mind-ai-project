@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     # App metadata
     PROJECT_NAME: str = "StudyMind AI"  # ← Valores por defecto
     VERSION: str = "0.1.0"
-    API_V1_PREFIX: str = "/api/v1"
+    API_PREFIX: str = "/api/v1"
 
     # Database - ESTAS se leen del .env (no tienen valor por defecto)
     POSTGRES_USER: str  # ← Debe estar en .env
